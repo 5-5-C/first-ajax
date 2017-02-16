@@ -10,14 +10,23 @@ $("#ajax-request").on('click', function() {
 
 $("#pingpong-button").on('click', function() {
   $.ajax({
-    url: 'http://first-ajax-api.herokuapp.com/ping',
+    url: 'http://first-ajax-api.herokuapp.com/pong',
     method:'GET',
     data: 'text'
   }).done(function (responseData) {
     console.log('Ajax request done');
-  $('step3456').append(responseData);
-  });
+
+}).fail(function(jqHXR, textStatus, errorThrown) {
+  console.log(jqHXR, textStatus, errorThrown);
+  $('#step3456').append('Ajax request failed');
 });
+});
+
+
+
+
+
+
 });
 
 
