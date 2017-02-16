@@ -19,6 +19,8 @@ $("#pingpong-button").on('click', function() {
 }).fail(function(jqHXR, textStatus, errorThrown) {
   console.log(jqHXR, textStatus, errorThrown);
   $('#step3456').append('Ajax request failed');
+}).always(function () {
+  console.log('Your request is finished');
 });
 });
 
