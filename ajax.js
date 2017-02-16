@@ -10,7 +10,7 @@ $("#ajax-request").on('click', function() {
 
 $("#pingpong-button").on('click', function() {
   $.ajax({
-    url: 'http://first-ajax-api.herokuapp.com/pong',
+    url: 'http://first-ajax-api.herokuapp.com/ping',
     method:'GET',
     data: 'text'
   }).done(function (responseData) {
@@ -24,8 +24,16 @@ $("#pingpong-button").on('click', function() {
 });
 });
 
-
-
+$("#count-button").on('click', function() {
+  $.ajax({
+    url: 'http://first-ajax-api.herokuapp.com/count',
+    method:'GET',
+    data: 'text'
+  }).done(function (responseData) {
+    console.log('Ajax request done');
+    $('#step7').append(responseData, 'requests!');
+    });
+  });
 
 
 
