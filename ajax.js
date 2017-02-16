@@ -35,6 +35,18 @@ $("#count-button").on('click', function() {
     });
   });
 
+  $("#time-button").on('click', function() {
+    $.ajax({
+      url: 'http://first-ajax-api.herokuapp.com/time',
+      method:'GET',
+      data: {timezone: 'Europe/Sofia'}
+    }).done(function (responseData) {
+      console.log('Ajax request done');
+      $('#step8').append(responseData);
+      });
+    });
+
+
 
 
 });
